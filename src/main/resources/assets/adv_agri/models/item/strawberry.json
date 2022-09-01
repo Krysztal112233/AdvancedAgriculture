@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "adv_agri:item/active_pump_core"
+    "layer0": "adv_agri:item/strawberry"
   }
 }

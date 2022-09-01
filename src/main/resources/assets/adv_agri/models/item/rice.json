@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "adv_agri:item/advanced_power_module"
+    "layer0": "adv_agri:item/rice"
   }
 }

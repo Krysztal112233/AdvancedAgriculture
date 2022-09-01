@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "adv_agri:item/corase_ore_powder"
+    "layer0": "adv_agri:item/solar_berry"
   }
 }
