@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smelting",
-  "ingredient": {
-    "item": "adv_agri:iron_powder"
-  },
-  "result": "minecraft:iron_ingot",
-  "experience": 0,
-  "cookingtime": 200
-}

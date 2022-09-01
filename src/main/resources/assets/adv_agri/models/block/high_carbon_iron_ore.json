@@ -1,6 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "adv_agri:block/high_carbon_iron_ore"
-  }
-}

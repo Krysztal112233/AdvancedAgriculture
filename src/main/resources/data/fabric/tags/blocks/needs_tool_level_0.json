@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
-    "adv_agri:phos_ore"
+    "adv_agri:phos_ore",
+    "adv_agri:nether_sulphur_ore",
+    "adv_agri:sulphur_ore"
   ]
 }

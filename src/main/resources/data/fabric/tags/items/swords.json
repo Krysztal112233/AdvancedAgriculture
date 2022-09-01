@@ -1,15 +1,5 @@
 {
   "replace": false,
   "values": [
-    "adv_agri:bronze_sword",
-    "adv_agri:aluminum_sword",
-    "adv_agri:tin_sword",
-    "adv_agri:lead_sword",
-    "adv_agri:zinc_sword",
-    "adv_agri:steel_sword",
-    "adv_agri:nickel_sword",
-    "adv_agri:titanium_sword",
-    "adv_agri:tungsten_sword",
-    "adv_agri:silver_sword"
   ]
 }

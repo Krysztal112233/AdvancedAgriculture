@@ -2,8 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "GPG",
-    "GGG",
-    "   "
+    "G G",
+    " G "
   ],
   "key": {
     "P": {
@@ -14,7 +14,7 @@
     }
   },
   "result": {
-    "item": "adv_agri:bottle_small",
+    "item": "adv_agri:bottle_medium",
     "count": 4
   }
 }

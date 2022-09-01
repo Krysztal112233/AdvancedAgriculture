@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smelting",
-  "ingredient": {
-    "item": "adv_agri:gold_powder"
-  },
-  "result": "minecraft:gold_ingot",
-  "experience": 0,
-  "cookingtime": 200
-}

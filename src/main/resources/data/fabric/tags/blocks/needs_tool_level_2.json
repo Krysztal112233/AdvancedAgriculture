@@ -1,18 +1,5 @@
 {
   "replace": false,
   "values": [
-    "adv_agri:bronze_block",
-    "adv_agri:lead_block",
-    "adv_agri:zinc_block",
-    "adv_agri:steel_block",
-    "adv_agri:nickel_block",
-    "adv_agri:silver_block",
-    "adv_agri:titanium_block",
-    "adv_agri:tungsten_block",
-    "adv_agri:tin_ore",
-    "adv_agri:lead_ore",
-    "adv_agri:zinc_ore",
-    "adv_agri:nickel_ore",
-    "adv_agri:silver_ore"
   ]
 }
