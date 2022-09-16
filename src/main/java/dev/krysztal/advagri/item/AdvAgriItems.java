@@ -15,7 +15,6 @@ import net.minecraft.util.registry.Registry;
 
 public class AdvAgriItems {
 
-
     public static Item FERTILIZER;
     public static Item POTASSIUM_SALT_POWDER;
     public static Item PLANT_ASH;
@@ -61,9 +60,7 @@ public class AdvAgriItems {
     public static Item GARLIC;
     public static Item WATER_CHESTNUT;
 
-    // Bushes
     public static Item SOLAR_BERRY;
-
 
     static {
         FERTILIZER = registry(new Fertilizer(new FabricItemSettings().group(AdvAgriItemGroup.ADV_AGRI_CORE_ITEM_GROUP)), "fertilizer");

@@ -2,6 +2,7 @@ package dev.krysztal.advagri.block;
 
 import dev.krysztal.advagri.AdvAgriConstants;
 import dev.krysztal.advagri.AdvAgriItemGroup;
+import dev.krysztal.advagri.annotations.DontGen;
 import dev.krysztal.advagri.block.impls.BambooBundle;
 import dev.krysztal.advagri.block.impls.ores.NetherSulphurOre;
 import dev.krysztal.advagri.block.impls.ores.SulphurOre;
@@ -15,14 +16,19 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
 public class AdvAgriBlocks {
-    // OtherOre
+
+    public static final Block ACIDIFIED_SOIL;
+    public static final Block HARDENED_SOIL;
     public static final Block PHOS_ORE;
     public static final Block SULPHUR_ORE;
     public static final Block NETHER_SULPHUR_ORE;
+    @DontGen
     public static final BambooBundle BAMBOO_BUNDLE;
     public static final Block VERMICULITE_ORE;
 
     static {
+        ACIDIFIED_SOIL = registry(new Block(FabricBlockSettings.copyOf(Blocks.DIRT)), "acidified_soil");
+        HARDENED_SOIL = registry(new Block(FabricBlockSettings.copyOf(Blocks.DIRT)), "hardened_soil");
         PHOS_ORE = registry(new Block(FabricBlockSettings.copyOf(Blocks.COAL_ORE).luminance(8).requiresTool()), "phos_ore");
         SULPHUR_ORE = registry(new SulphurOre(FabricBlockSettings.copyOf(Blocks.COAL_ORE).requiresTool()), "sulphur_ore");
         NETHER_SULPHUR_ORE = registry(new NetherSulphurOre(FabricBlockSettings.copyOf(Blocks.COAL_ORE).requiresTool()), "nether_sulphur_ore");

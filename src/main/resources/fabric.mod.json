@@ -16,10 +16,13 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "dev.krysztal.advagri.AdvAgriSideGeneral"
+      "dev.krysztal.advagri.entrypoint.General"
     ],
     "client": [
-      "dev.krysztal.advagri.AdvAgriSideClient"
+      "dev.krysztal.advagri.entrypoint.Client"
+    ],
+    "fabric-datagen": [
+      "dev.krysztal.advagri.entrypoint.datagen.DataGen"
     ]
   },
   "mixins": [
