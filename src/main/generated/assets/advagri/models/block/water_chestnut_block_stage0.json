@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/crop",
-  "textures": {
-    "crop": "advagri:block/water_chestnut_block_stage0"
-  }
-}

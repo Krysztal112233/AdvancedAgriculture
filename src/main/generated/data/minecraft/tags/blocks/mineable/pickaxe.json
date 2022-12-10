@@ -3,6 +3,7 @@
   "values": [
     "advagri:phos_ore",
     "advagri:sulphur_ore",
-    "advagri:nether_sulphur_ore"
+    "advagri:nether_sulphur_ore",
+    "advagri:vermiculite_ore"
   ]
 }

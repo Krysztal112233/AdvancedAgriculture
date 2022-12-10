@@ -1,0 +1,26 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:mud",
+    "minecraft:dead_bush",
+    "minecraft:kelp_plant",
+    "minecraft:kelp",
+    "minecraft:tall_grass",
+    "minecraft:grass",
+    "minecraft:bamboo_sapling",
+    "minecraft:sugar_cane",
+    "minecraft:large_fern",
+    "minecraft:fern",
+    "minecraft:sea_pickle",
+    "minecraft:seagrass",
+    "minecraft:tall_seagrass",
+    {
+      "id": "#minecraft:leaves",
+      "required": false
+    },
+    {
+      "id": "#minecraft:flowers",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "replace": false,
+  "values": [
+    "advagri:sulphur_ore",
+    "advagri:nether_sulphur_ore",
+    "minecraft:fern",
+    "minecraft:glass",
+    "minecraft:grass_block",
+    "minecraft:tall_grass",
+    "minecraft:large_fern",
+    {
+      "id": "#minecraft:flowers",
+      "required": false
+    }
+  ]
+}

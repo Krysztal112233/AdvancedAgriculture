@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "advagri:item/bamboo_charcoal_ball"
-  }
-}

@@ -18,6 +18,7 @@ public class AdvAgriTags {
     public static final TagKey<Block> HIDDEN_BAMBOO;
     public static final TagKey<Block> SULPHUR_ORE;
     public static final TagKey<Block> SILT;
+    public static final TagKey<Block> GINKGO_LOGS;
 
     public static void init() {}
 
@@ -26,6 +27,7 @@ public class AdvAgriTags {
       HIDDEN_BAMBOO = registry("hidden_bamboo");
       SULPHUR_ORE = registry("sulphur_ore");
       SILT = registry("silt");
+      GINKGO_LOGS = registry("ginkgo_logs");
     }
 
     private static TagKey<Block> registry(String id) {

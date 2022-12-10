@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "advagri:ginkgo_logs",
+    "advagri:ginkgo_wood",
+    "advagri:stripped_ginkgo_logs",
+    "advagri:stripped_ginkgo_wood"
+  ]
+}

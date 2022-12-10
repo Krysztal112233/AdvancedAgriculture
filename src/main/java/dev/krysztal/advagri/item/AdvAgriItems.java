@@ -5,9 +5,11 @@ import dev.krysztal.advagri.block.AdvAgriBlocks;
 import dev.krysztal.advagri.foundation.AdvAgriFoodComponents;
 import dev.krysztal.advagri.foundation.AdvAgriItemGroups;
 import dev.krysztal.advagri.foundation.AdvAgriRegistrates;
+import dev.krysztal.advagri.foundation.AdvAgriTags;
 import dev.krysztal.advagri.item.impls.BambooChopper;
 import dev.krysztal.advagri.item.impls.BambooDrillRod;
 import dev.krysztal.advagri.item.impls.Fertilizer;
+import javax.annotation.Nonnull;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.block.Block;
@@ -16,6 +18,8 @@ import net.minecraft.item.FoodComponent;
 import net.minecraft.item.FoodComponents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ToolMaterials;
+import net.minecraft.tag.ItemTags;
+import net.minecraft.tag.TagKey;
 
 public class AdvAgriItems {
 
@@ -71,10 +75,8 @@ public class AdvAgriItems {
   public static RegistryEntry<Item> ACORNS;
   public static RegistryEntry<Item> ROASTED_ACORNS;
 
-  public static void init() {}
-
-  // Item registry
-  static {
+  public static void init() {
+    // Item registry
     FERTILIZER =
       AdvAgriRegistrates.ITEM_REGISTRATE
         .item("fertilizer", Fertilizer::new)
@@ -89,19 +91,19 @@ public class AdvAgriItems {
     SOLARIUM_BOTTLE_SMALL = registerDefaultItem("solarium_bottle_small");
     SOLARIUM_BOTTLE_MEDIUM = registerDefaultItem("solarium_bottle_medium");
     SOLARIUM_BOTTLE_LARGE = registerDefaultItem("solarium_bottle_large");
-    BAMBOO_LEAVES = registerDefaultItem("bamboo_leaves");
+    BAMBOO_LEAVES =
+      registerDefaultItem("bamboo_leaves", AdvAgriTags.ItemTags.PLANT);
     BAMBOO_SILK = registerDefaultItem("bamboo_silk");
     BAMBOO_SILK_BOARD = registerDefaultItem("bamboo_silk_board");
     BAMBOO_CHARCOAL = registerDefaultItem("bamboo_charcoal");
-    BAMBOO_CHARCOAL_BALL = registerDefaultItem("bamboo_charcoal_ball");
+    BAMBOO_CHARCOAL_BALL =
+      registerDefaultItem("bamboo_charcoal_ball", ItemTags.LEAVES);
     BAMBOO_SAPLING = registerDefaultItem("bamboo_sapling");
     PHOS = registerDefaultItem("phos");
     VERMICULITE = registerDefaultItem("vermiculite");
     SULFUR = registerDefaultItem("sulfur");
-  }
 
-  // Seed bag registry
-  static {
+    // Seed bag registry
     SEED_BAG_RICE =
       registerAliasedBlockItem("rice_seed_bag", AdvAgriBlocks.RICE_BLOCK.get());
     SEED_BAG_CHILI =
@@ -131,10 +133,8 @@ public class AdvAgriItems {
         "sweet_potato_bean_seed_bag",
         AdvAgriBlocks.SWEET_POTATO_BLOCK.get()
       );
-  }
 
-  // Agriculture product registry
-  static {
+    // Agriculture product registry
     RICE = registerDefaultItem("rice");
     RICE_UNHUSKED = registerDefaultItem("rice_unhusked");
     CHILI = registerDefaultItem("chili");
@@ -148,10 +148,8 @@ public class AdvAgriItems {
         AdvAgriBlocks.WATER_CHESTNUT_BLOCK.get()
       );
     STRAW = registerDefaultItem("straw");
-  }
 
-  // Util tool registry
-  static {
+    // Util tool registry
     BAMBOO_CHOPPER =
       AdvAgriRegistrates.ITEM_REGISTRATE
         .item(
@@ -173,10 +171,9 @@ public class AdvAgriItems {
         .item("bamboo_drill_rod", BambooDrillRod::new)
         .tab(() -> AdvAgriItemGroups.ADV_AGRI_CORE_ITEM_GROUP)
         .register();
-  }
 
-  // Food registry
-  static {
+    // Food registry
+
     ASPARAGUS =
       registerDefaultFood("asparagus", AdvAgriFoodComponents.ASPARAGUS);
 
@@ -199,10 +196,8 @@ public class AdvAgriItems {
         "roasted_acorns",
         AdvAgriFoodComponents.ROASTED_ACORNS
       );
-  }
 
-  // Fuel registry
-  static {
+    // Fuel registry
     FuelRegistry.INSTANCE.add(BAMBOO_CHARCOAL_BALL.get(), 80 * 20); //80s
     FuelRegistry.INSTANCE.add(BAMBOO_CHARCOAL.get(), 20 * 20); //20s
     FuelRegistry.INSTANCE.add(BAMBOO_LEAVES.get(), 2 * 20); //2s
@@ -221,6 +216,18 @@ public class AdvAgriItems {
   private static RegistryEntry<Item> registerDefaultItem(String path) {
     return AdvAgriRegistrates.ITEM_REGISTRATE
       .item(path, Item::new)
+      .tab(() -> AdvAgriItemGroups.ADV_AGRI_CORE_ITEM_GROUP)
+      .register();
+  }
+
+  @SafeVarargs
+  private static RegistryEntry<Item> registerDefaultItem(
+    String path,
+    TagKey<Item>... tag
+  ) {
+    return AdvAgriRegistrates.ITEM_REGISTRATE
+      .item(path, Item::new)
+      .tag(tag)
       .tab(() -> AdvAgriItemGroups.ADV_AGRI_CORE_ITEM_GROUP)
       .register();
   }

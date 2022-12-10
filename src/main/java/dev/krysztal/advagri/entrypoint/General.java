@@ -20,8 +20,8 @@ public class General implements ModInitializer {
     AdvAgriLoot.init();
     AdvAgriEvents.init();
 
+    AdvAgriRegistrates.BLOCK_REGISTRATE.register();
     AdvAgriRegistrates.ITEM_REGISTRATE.register();
     AdvAgriRegistrates.FOOD_REGISTRATE.register();
-    AdvAgriRegistrates.BLOCK_REGISTRATE.register();
   }
 }
