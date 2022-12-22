@@ -105,7 +105,7 @@ public class AdvAgriBlocks {
 
   //================= Plants Blocks ===============//
   @GenTypes(types = { GenType.CropBlockState })
-  public static CornBlock CRON_BLOCK;
+  public static CornBlock CORN_BLOCK;
 
   @GenTypes(types = { GenType.CropBlockState })
   public static GarlicBlock GARLIC_BLOCK;
@@ -201,10 +201,10 @@ public class AdvAgriBlocks {
       );
 
     //================= Plants Blocks ===============//
-    CRON_BLOCK =
+    CORN_BLOCK =
       registryPlant(
         new CornBlock(FabricBlockSettings.copyOf(Blocks.CARROTS)),
-        "cron_block"
+        "corn_block"
       );
 
     GARLIC_BLOCK =

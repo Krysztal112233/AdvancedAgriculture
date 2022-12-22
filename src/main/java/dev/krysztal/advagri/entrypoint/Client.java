@@ -17,7 +17,7 @@ public class Client implements ClientModInitializer {
       RenderLayer.getCutout(),
       AdvAgriBlocks.SOLAR_BERRY_BUSH_BLOCK,
       AdvAgriBlocks.LETTUCE_BLOCK,
-      AdvAgriBlocks.CRON_BLOCK,
+      AdvAgriBlocks.CORN_BLOCK,
       AdvAgriBlocks.GARLIC_BLOCK,
       AdvAgriBlocks.SWEET_POTATO_BLOCK,
       AdvAgriBlocks.WATER_CHESTNUT_BLOCK,

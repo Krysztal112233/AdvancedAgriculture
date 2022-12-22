@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/crop",
   "textures": {
-    "crop": "advagri:block/cron_block_stage4"
+    "crop": "advagri:block/corn_block_stage4"
   }
 }

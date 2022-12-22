@@ -131,6 +131,9 @@ public class AdvAgriItems {
   @GenTypes
   public static Item WATER_CHESTNUT;
 
+  @GenTypes
+  public static Item CORN;
+
   //================ Food =====================//
   @GenTypes
   public static Item ASPARAGUS;
@@ -189,7 +192,7 @@ public class AdvAgriItems {
     SEED_BAG_CELERY = registry("celery_seed_bag");
     SEED_BAG_LETTUCE = registry("lettuce_seed_bag");
     SEED_BAG_STRAWBERRY = registry("strawberry_seed_bag");
-    SEED_BAG_CORN = registryAliased("corn_seed_bag", AdvAgriBlocks.CRON_BLOCK);
+    SEED_BAG_CORN = registryAliased("corn_seed_bag", AdvAgriBlocks.CORN_BLOCK);
     SEED_BAG_SWEET_POTATO_BEAN = registry("sweet_potato_bean_seed_bag");
     RICE_UNHUSKED = registry("rice_unhusked");
     RICE = registry("rice");
@@ -199,6 +202,7 @@ public class AdvAgriItems {
     LETTUCE = registry("lettuce");
     STRAWBERRY = registry("strawberry");
     GARLIC = registry("garlic");
+    CORN = registry("corn");
     WATER_CHESTNUT =
       registryAliased("water_chestnut", AdvAgriBlocks.WATER_CHESTNUT_BLOCK);
 
