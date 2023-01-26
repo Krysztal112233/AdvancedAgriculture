@@ -2,6 +2,7 @@ package dev.krysztal.advagri.block;
 
 import dev.krysztal.advagri.block.impls.NetherSulphurOreBlock;
 import dev.krysztal.advagri.block.impls.SulphurOreBlock;
+import dev.krysztal.advagri.block.impls.WaterWellBlock;
 import dev.krysztal.advagri.block.impls.crops.*;
 import dev.krysztal.advagri.foundation.AdvAgriConstants;
 import dev.krysztal.advagri.foundation.AdvAgriItemGroups;
@@ -123,6 +124,10 @@ public class AdvAgriBlocks {
   @GenTypes(types = { GenType.CropBlockState })
   public static WaterChestnutBlock WATER_CHESTNUT_BLOCK;
 
+  //===================================================//
+  @GenTypes(types = { GenType.SimpleBlockModel })
+  public static WaterWellBlock WATER_WELL_BLOCK;
+
   public static void init() {
     ACIDIFIED_SOIL = registry(defaultBlock(Blocks.DIRT), "acidified_soil");
     HARDENED_SOIL = registry(defaultBlock(Blocks.DIRT), "hardened_soil");
@@ -160,6 +165,7 @@ public class AdvAgriBlocks {
         ),
         "ginkgo_log"
       );
+
     //====================== Wood ====================//
     GINKGO_WOOD =
       registry(
@@ -177,6 +183,7 @@ public class AdvAgriBlocks {
         ),
         "stripped_ginkgo_log"
       );
+
     //====================== Stripped log ==========//
     STRIPPED_GINKGO_WOOD =
       registry(
@@ -241,6 +248,12 @@ public class AdvAgriBlocks {
       registryPlant(
         new WaterChestnutBlock(FabricBlockSettings.copyOf(Blocks.CARROTS)),
         "water_chestnut_block"
+      );
+
+    WATER_WELL_BLOCK =
+      registry(
+        new WaterWellBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE)),
+        "water_well_block"
       );
   }
 

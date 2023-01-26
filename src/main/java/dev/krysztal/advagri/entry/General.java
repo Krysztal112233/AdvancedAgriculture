@@ -1,6 +1,7 @@
 package dev.krysztal.advagri.entry;
 
 import dev.krysztal.advagri.block.AdvAgriBlocks;
+import dev.krysztal.advagri.entity.AdvAgriEntities;
 import dev.krysztal.advagri.event.AdvAgriEvents;
 import dev.krysztal.advagri.foundation.AdvAgriGameRules;
 import dev.krysztal.advagri.foundation.AdvAgriTags;
@@ -14,6 +15,7 @@ public class General implements ModInitializer {
   public void onInitialize() {
     AdvAgriBlocks.init();
     AdvAgriItems.init();
+    AdvAgriEntities.init();
     AdvAgriTags.init();
     AdvAgriGameRules.init();
     AdvAgriLoot.init();
