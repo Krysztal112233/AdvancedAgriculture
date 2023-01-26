@@ -6,3 +6,4 @@ accessible method net/minecraft/item/ItemStack isIn (Lnet/minecraft/tag/TagKey;)
 accessible method net/minecraft/item/Item isIn (Lnet/minecraft/item/ItemGroup;)Z
 # IntProperty.max
 accessible field net/minecraft/state/property/IntProperty field_37656 I
+accessible field net/minecraft/server/world/ServerWorld worldProperties Lnet/minecraft/world/level/ServerWorldProperties;

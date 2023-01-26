@@ -63,6 +63,7 @@ public class AdvAgriItems {
   @GenTypes
   public static Item BAMBOO_CHARCOAL_BALL;
 
+  @GenTypes
   public static Item BAMBOO_SAPLING;
 
   @GenTypes

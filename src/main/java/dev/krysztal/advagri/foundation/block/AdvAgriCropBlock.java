@@ -15,7 +15,7 @@ import net.minecraft.world.World;
 public abstract class AdvAgriCropBlock extends CropBlock {
 
   @Getter
-  private AdvAgriSolarTerm rightSolarterm = AdvAgriSolarTerm.SPRING;
+  private AdvAgriSolarTerm rightSolarTerm = AdvAgriSolarTerm.SPRING;
 
   public AdvAgriCropBlock(Settings settings) {
     super(settings);
@@ -23,7 +23,7 @@ public abstract class AdvAgriCropBlock extends CropBlock {
 
   public AdvAgriCropBlock(Settings settings, AdvAgriSolarTerm rightSolarTerm) {
     super(settings);
-    this.rightSolarterm = rightSolarTerm;
+    this.rightSolarTerm = rightSolarTerm;
   }
 
   public static VoxelShape getShapeOfAge(
@@ -47,13 +47,13 @@ public abstract class AdvAgriCropBlock extends CropBlock {
       !world.getGameRules().get(AdvAgriGameRules.ALLOW_SEASONS_CHANGE).get()
     ) return true;
 
-    // The lenght between right term and current term.
+    // The length between right term and current term.
     var stepLength = Math.abs(
-      this.rightSolarterm.ordinal() -
+      this.rightSolarTerm.ordinal() -
       SolarTermPersistentState.get(world).getSeason()
     );
 
-    // Cacl the grow chance.
+    // Calc the grow chance.
     var growChance = (int) (
       ((double) stepLength / (double) AdvAgriSolarTerm.values().length) * 100
     );
