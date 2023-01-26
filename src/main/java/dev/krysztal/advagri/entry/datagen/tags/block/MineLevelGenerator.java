@@ -1,4 +1,4 @@
-package dev.krysztal.advagri.entrypoint.datagen.tags;
+package dev.krysztal.advagri.entry.datagen.tags.block;
 
 import dev.krysztal.advagri.block.AdvAgriBlocks;
 import dev.krysztal.advagri.foundation.annotation.GenType;

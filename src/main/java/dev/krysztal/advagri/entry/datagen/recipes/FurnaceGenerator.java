@@ -1,4 +1,4 @@
-package dev.krysztal.advagri.entrypoint.datagen.recipes;
+package dev.krysztal.advagri.entry.datagen.recipes;
 
 import java.util.function.Consumer;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;

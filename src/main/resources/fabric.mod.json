@@ -13,9 +13,9 @@
   "icon": "assets/advagri/icon.png",
   "environment": "*",
   "entrypoints": {
-    "main": ["dev.krysztal.advagri.entrypoint.General"],
-    "client": ["dev.krysztal.advagri.entrypoint.Client"],
-    "fabric-datagen": ["dev.krysztal.advagri.entrypoint.datagen.AdvAgriDataGen"]
+    "main": ["dev.krysztal.advagri.entry.General"],
+    "client": ["dev.krysztal.advagri.entry.Client"],
+    "fabric-datagen": ["dev.krysztal.advagri.entry.datagen.AdvAgriDataGen"]
   },
   "mixins": ["advagri.mixins.json"],
   "depends": {

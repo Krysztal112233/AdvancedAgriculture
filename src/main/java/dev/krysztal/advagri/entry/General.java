@@ -1,4 +1,4 @@
-package dev.krysztal.advagri.entrypoint;
+package dev.krysztal.advagri.entry;
 
 import dev.krysztal.advagri.block.AdvAgriBlocks;
 import dev.krysztal.advagri.event.AdvAgriEvents;

@@ -1,4 +1,4 @@
-package dev.krysztal.advagri.entrypoint.datagen.models;
+package dev.krysztal.advagri.entry.datagen.models;
 
 import dev.krysztal.advagri.block.AdvAgriBlocks;
 import dev.krysztal.advagri.foundation.annotation.GenType;
@@ -12,14 +12,14 @@ import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Models;
 import net.minecraft.item.Item;
-import net.minecraft.util.Pair;
+import org.apache.commons.lang3.tuple.Pair;
 
 public class ModelsGenerator extends FabricModelProvider {
 
   // log & wood type.
   private static final List<Pair<Block, Block>> LOG_WOOD = List.of(
-    new Pair<Block, Block>(AdvAgriBlocks.GINKGO_LOG, AdvAgriBlocks.GINKGO_WOOD),
-    new Pair<Block, Block>(
+    Pair.of(AdvAgriBlocks.GINKGO_LOG, AdvAgriBlocks.GINKGO_WOOD),
+    Pair.of(
       AdvAgriBlocks.STRIPPED_GINKGO_LOG,
       AdvAgriBlocks.STRIPPED_GINKGO_WOOD
     )
@@ -29,13 +29,13 @@ public class ModelsGenerator extends FabricModelProvider {
   private static final List<Block> SIMPLE_BLOCK_STATE = new GeneratorUtils.Collector(
     GenType.SimpleBlockState
   )
-    .<Block>collect(AdvAgriBlocks.class);
+    .collect(AdvAgriBlocks.class);
 
   // Collect simple block models
   private static final List<Block> SIMPLE_BLOCK_MODEL = new GeneratorUtils.Collector(
     GenType.SimpleBlockModel
   )
-    .<Block>collect(AdvAgriBlocks.class);
+    .collect(AdvAgriBlocks.class);
 
   public ModelsGenerator(FabricDataGenerator dataGenerator) {
     super(dataGenerator);

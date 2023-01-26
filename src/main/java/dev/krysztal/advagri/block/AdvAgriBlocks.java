@@ -93,7 +93,7 @@ public class AdvAgriBlocks {
     types = {
       GenType.SimpleBlockLoot,
       GenType.MineAxe,
-      GenType.SimpleBlockState,
+      GenType.SimpleBlockModel,
       GenType.SimpleItemModel,
     }
   )

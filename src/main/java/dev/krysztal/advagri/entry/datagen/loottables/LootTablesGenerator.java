@@ -1,4 +1,4 @@
-package dev.krysztal.advagri.entrypoint.datagen.loottables;
+package dev.krysztal.advagri.entry.datagen.loottables;
 
 import dev.krysztal.advagri.block.AdvAgriBlocks;
 import dev.krysztal.advagri.foundation.AdvAgriConstants;

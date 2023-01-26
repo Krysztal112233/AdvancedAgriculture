@@ -1,4 +1,4 @@
-// 1.19.2	2023-01-26T16:25:15.0678452	Models
+// 1.19.2	2023-01-26T20:06:57.3925255	Models
 306a8c27f2f9363f399de5dc3f8145707980699d assets\advagri\models\item\phos_ore.json
 2d7dc129080b5c64af965a9a2ffbb29373871835 assets\advagri\models\item\bamboo_drill_rod.json
 1c277c0229a523eed6899fdd69784e9cc58df93a assets\advagri\models\item\hardened_soil.json
@@ -51,6 +51,7 @@ e8065556d01fa9ae0edbdd4fcd32f88e0cbf9200 assets\advagri\models\block\ginkgo_leav
 23899e59b68eb5368984ce32fc4569b9b8f80f2b assets\advagri\models\item\ginkgo_log.json
 4e6e3494031502e8e63dd7bb2e9ed2934de415a5 assets\advagri\models\item\potassium_salt_powder.json
 14f8a3566a0bf382bbf55bdcacc30993c2ae8a31 assets\advagri\models\item\vermiculite_ore.json
+083bd057b03a15dc30cfe723630583702dd69457 assets\advagri\models\block\ginkgo_planks.json
 1f74b96a8abc460588bea437c3c7b08b94feea1d assets\advagri\blockstates\ginkgo_leaves.json
 8ba264a606950f45f8900508520831c8a3bdde04 assets\advagri\models\item\strawberry.json
 fd81b09ddfdf639fc65a278a67bb4877fa9353fb assets\advagri\models\item\rice_unhusked.json
