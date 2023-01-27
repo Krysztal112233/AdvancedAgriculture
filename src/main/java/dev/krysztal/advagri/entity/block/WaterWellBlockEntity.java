@@ -12,13 +12,13 @@ import net.minecraft.world.World;
 public class WaterWellBlockEntity extends BlockEntity {
 
   @Getter
-  private int phoElement = 0;
+  private int phosphorusElement = 0;
 
   @Getter
-  private int potElement = 0;
+  private int potassiumElement = 0;
 
   @Getter
-  private int calElement = 0;
+  private int calciumElement = 0;
 
   @Getter
   private boolean wet = false;
@@ -33,30 +33,28 @@ public class WaterWellBlockEntity extends BlockEntity {
     BlockState state,
     WaterWellBlockEntity entity
   ) {
-    if (world.getBlockState(pos.up()).getBlock() != Blocks.WATER) return;
-
-    this.wet = true;
+    this.wet = world.getBlockState(pos.up()).getBlock() == Blocks.WATER;
     this.markDirty();
   }
 
   @Override
   public void readNbt(NbtCompound nbt) {
-    nbt.putInt("pot_element", this.getPotElement());
-    nbt.putInt("pho_element", this.getPhoElement());
-    nbt.putInt("cal_element", this.getCalElement());
+    nbt.putInt("PotassiumElement", this.getPotassiumElement());
+    nbt.putInt("PhosphorusElement", this.getPhosphorusElement());
+    nbt.putInt("CalciumElement", this.getCalciumElement());
 
-    nbt.putBoolean("wet", this.isWet());
+    nbt.putBoolean("Wet", this.isWet());
 
     super.readNbt(nbt);
   }
 
   @Override
   protected void writeNbt(NbtCompound nbt) {
-    potElement = nbt.getInt("pot_element");
-    phoElement = nbt.getInt("pho_element");
-    calElement = nbt.getInt("cal_element");
+    potassiumElement = nbt.getInt("PotassiumElement");
+    phosphorusElement = nbt.getInt("PhosphorusElement");
+    calciumElement = nbt.getInt("CalciumElement");
 
-    wet = nbt.getBoolean("wet");
+    wet = nbt.getBoolean("Wet");
 
     super.writeNbt(nbt);
   }
