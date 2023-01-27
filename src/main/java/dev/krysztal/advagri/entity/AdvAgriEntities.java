@@ -20,12 +20,17 @@ public class AdvAgriEntities {
 
     static void init() {}
 
-    public static final BlockEntityType<WaterWellBlockEntity> WATER_WELL_BLOCK_ENTITY = BlockEntityType.create(
-      "water_well_block",
-      BlockEntityType.Builder.create(
-        WaterWellBlockEntity::new,
-        AdvAgriBlocks.WATER_WELL_BLOCK
-      )
-    );
+    public static final BlockEntityType<WaterWellBlockEntity> WATER_WELL_BLOCK_ENTITY;
+
+    static {
+      WATER_WELL_BLOCK_ENTITY =
+        BlockEntityType.create(
+          "water_well_block",
+          BlockEntityType.Builder.create(
+            WaterWellBlockEntity::new,
+            AdvAgriBlocks.WATER_WELL_BLOCK
+          )
+        );
+    }
   }
 }
