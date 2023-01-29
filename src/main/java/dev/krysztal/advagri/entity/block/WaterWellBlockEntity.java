@@ -2,6 +2,7 @@ package dev.krysztal.advagri.entity.block;
 
 import dev.krysztal.advagri.entity.AdvAgriEntities;
 import lombok.Getter;
+import lombok.Setter;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BlockEntity;
@@ -12,15 +13,19 @@ import net.minecraft.world.World;
 public class WaterWellBlockEntity extends BlockEntity {
 
   @Getter
+  @Setter
   private int phosphorusElement = 0;
 
   @Getter
+  @Setter
   private int potassiumElement = 0;
 
   @Getter
+  @Setter
   private int calciumElement = 0;
 
   @Getter
+  @Setter
   private boolean wet = false;
 
   public WaterWellBlockEntity(BlockPos pos, BlockState state) {
@@ -33,7 +38,7 @@ public class WaterWellBlockEntity extends BlockEntity {
     BlockState state,
     WaterWellBlockEntity entity
   ) {
-    this.wet = world.getBlockState(pos.up()).getBlock() == Blocks.WATER;
+    this.setWet(world.getBlockState(pos.up()).getBlock() == Blocks.WATER);
     this.markDirty();
   }
 
@@ -50,11 +55,11 @@ public class WaterWellBlockEntity extends BlockEntity {
 
   @Override
   protected void writeNbt(NbtCompound nbt) {
-    potassiumElement = nbt.getInt("PotassiumElement");
-    phosphorusElement = nbt.getInt("PhosphorusElement");
-    calciumElement = nbt.getInt("CalciumElement");
+    this.setPotassiumElement(nbt.getInt("PotassiumElement"));
+    this.setPhosphorusElement(nbt.getInt("PhosphorusElement"));
+    this.setCalciumElement(nbt.getInt("CalciumElement"));
 
-    wet = nbt.getBoolean("Wet");
+    this.setWet(nbt.getBoolean("Wet"));
 
     super.writeNbt(nbt);
   }

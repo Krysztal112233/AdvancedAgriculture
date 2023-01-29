@@ -1,9 +1,7 @@
 package dev.krysztal.advagri.block.impls;
 
-import dev.krysztal.advagri.entity.AdvAgriEntities;
 import dev.krysztal.advagri.entity.block.WaterWellBlockEntity;
-import java.util.Objects;
-import lombok.extern.slf4j.Slf4j;
+import java.util.Random;
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.BlockWithEntity;
@@ -15,6 +13,9 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 public class WaterWellBlock extends BlockWithEntity {
+
+  private int tickCount = 0;
+  private final int maxTickCount = 8 + (new Random().nextInt(-4, 4));
 
   public WaterWellBlock(Settings settings) {
     super(settings);
@@ -38,15 +39,17 @@ public class WaterWellBlock extends BlockWithEntity {
     BlockState state,
     BlockEntityType<T> type
   ) {
-    return checkType(
-      type,
-      AdvAgriEntities.BlockEntities.WATER_WELL_BLOCK_ENTITY,
-      (world1, pos, state1, be) ->
-        (
-          (WaterWellBlockEntity) (
-            Objects.requireNonNull(world.getBlockEntity(pos))
-          )
-        ).tick(world1, pos, state1, be)
-    );
+    tickCount++;
+
+    if (tickCount >= maxTickCount) {
+      tickCount = 0;
+      return (world1, pos, state1, be) ->
+        ((WaterWellBlockEntity) be).tick(
+            world1,
+            pos,
+            state1,
+            (WaterWellBlockEntity) be
+          );
+    } else return super.getTicker(world, state, type);
   }
 }
