@@ -8,6 +8,10 @@ import dev.krysztal.advagri.foundation.AdvAgriConstants;
 import dev.krysztal.advagri.foundation.AdvAgriItemGroups;
 import dev.krysztal.advagri.foundation.annotation.GenType;
 import dev.krysztal.advagri.foundation.annotation.GenTypes;
+import dev.krysztal.advagri.foundation.world.gen.AdvAgriConfiguredFeature;
+import dev.krysztal.advagri.foundation.world.gen.AdvAgriPlacedFeatures;
+import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
+import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
@@ -15,7 +19,12 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.PillarBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.util.registry.RegistryKey;
+import net.minecraft.world.gen.GenerationStep;
+import net.minecraft.world.gen.feature.ConfiguredFeature;
+import net.minecraft.world.gen.feature.PlacedFeature;
 
 public class AdvAgriBlocks {
 
@@ -257,6 +266,30 @@ public class AdvAgriBlocks {
       );
   }
 
+  static {
+    registryOverWorldOre(
+      "sulphur_ore",
+      AdvAgriConfiguredFeature.OverWorld.SULPHUR_ORE_CONFIGURED_FEATURE,
+      AdvAgriPlacedFeatures.OverWorld.SULPHUR_ORE_PLACED_FEATURE
+    );
+    registryOverWorldOre(
+      "vermiculite_ore",
+      AdvAgriConfiguredFeature.OverWorld.VERMICULITE_ORE_CONFIGURED_FEATURE,
+      AdvAgriPlacedFeatures.OverWorld.VERMICULITE_ORE_PLACED_FEATURE
+    );
+    registryOverWorldOre(
+      "phos_ore",
+      AdvAgriConfiguredFeature.OverWorld.PHOS_ORE_CONFIGURED_FEATURE,
+      AdvAgriPlacedFeatures.OverWorld.PHOS_ORE_PLACED_FEATURE
+    );
+
+    registryNetherOre(
+      "nether_sulphur_ore",
+      AdvAgriConfiguredFeature.Nether.NETHER_SULPHUR_ORE_CONFIGURED_FEATURE,
+      AdvAgriPlacedFeatures.Nether.NETHER_SULPHUR_ORE_PLACED_FEATURE
+    );
+  }
+
   private static <T extends Block> T registry(T block, String path) {
     Registry.register(
       Registry.BLOCK,
@@ -287,6 +320,56 @@ public class AdvAgriBlocks {
       new BlockItem(block, new FabricItemSettings())
     );
     return block;
+  }
+
+  public static void registryNetherOre(
+    String path,
+    ConfiguredFeature<?, ?> configuredFeature,
+    PlacedFeature placedFeature
+  ) {
+    Registry.register(
+      BuiltinRegistries.CONFIGURED_FEATURE,
+      new Identifier(AdvAgriConstants.MODID, path),
+      configuredFeature
+    );
+    Registry.register(
+      BuiltinRegistries.PLACED_FEATURE,
+      new Identifier(AdvAgriConstants.MODID, path),
+      placedFeature
+    );
+    BiomeModifications.addFeature(
+      BiomeSelectors.foundInTheNether(),
+      GenerationStep.Feature.UNDERGROUND_ORES,
+      RegistryKey.of(
+        Registry.PLACED_FEATURE_KEY,
+        new Identifier(AdvAgriConstants.MODID, path)
+      )
+    );
+  }
+
+  public static void registryOverWorldOre(
+    String path,
+    ConfiguredFeature<?, ?> configuredFeature,
+    PlacedFeature placedFeature
+  ) {
+    Registry.register(
+      BuiltinRegistries.CONFIGURED_FEATURE,
+      new Identifier(AdvAgriConstants.MODID, path),
+      configuredFeature
+    );
+    Registry.register(
+      BuiltinRegistries.PLACED_FEATURE,
+      new Identifier(AdvAgriConstants.MODID, path),
+      placedFeature
+    );
+    BiomeModifications.addFeature(
+      BiomeSelectors.foundInOverworld(),
+      GenerationStep.Feature.UNDERGROUND_ORES,
+      RegistryKey.of(
+        Registry.PLACED_FEATURE_KEY,
+        new Identifier(AdvAgriConstants.MODID, path)
+      )
+    );
   }
 
   private static Block defaultBlock(Block block) {
