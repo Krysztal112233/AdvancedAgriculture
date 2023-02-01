@@ -10,7 +10,7 @@ import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.Item;
 import org.apache.commons.lang3.tuple.Triple;
 
-public class CropToSeedRecipeGenerator extends FabricRecipeProvider {
+public class CropToSeedRecipesGenerator extends FabricRecipeProvider {
 
   public static final List<Triple<Item, Item, Integer>> PRODUCT_SEED_MAPPING = List.of(
     Triple.of(AdvAgriItems.CORN, AdvAgriItems.SEED_BAG_CORN, 4),
@@ -18,7 +18,7 @@ public class CropToSeedRecipeGenerator extends FabricRecipeProvider {
     Triple.of(AdvAgriItems.CHILI, AdvAgriItems.SEED_BAG_CHILI, 4)
   );
 
-  public CropToSeedRecipeGenerator(FabricDataGenerator dataGenerator) {
+  public CropToSeedRecipesGenerator(FabricDataGenerator dataGenerator) {
     super(dataGenerator);
   }
 

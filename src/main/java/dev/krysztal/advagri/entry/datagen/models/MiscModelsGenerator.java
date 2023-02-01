@@ -14,7 +14,7 @@ import net.minecraft.data.client.Models;
 import net.minecraft.item.Item;
 import org.apache.commons.lang3.tuple.Pair;
 
-public class ModelsGenerator extends FabricModelProvider {
+public class MiscModelsGenerator extends FabricModelProvider {
 
   // log & wood type.
   private static final List<Pair<Block, Block>> LOG_WOOD = List.of(
@@ -37,7 +37,7 @@ public class ModelsGenerator extends FabricModelProvider {
   )
     .collect(AdvAgriBlocks.class);
 
-  public ModelsGenerator(FabricDataGenerator dataGenerator) {
+  public MiscModelsGenerator(FabricDataGenerator dataGenerator) {
     super(dataGenerator);
   }
 

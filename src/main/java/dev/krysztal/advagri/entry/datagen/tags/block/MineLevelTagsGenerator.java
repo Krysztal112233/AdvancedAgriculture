@@ -11,14 +11,14 @@ import net.minecraft.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
-public class MineLevelGenerator extends FabricTagProvider.BlockTagProvider {
+public class MineLevelTagsGenerator extends FabricTagProvider.BlockTagProvider {
 
   private static final TagKey<Block> MINE_LEVEL_0 = TagKey.of(
     Registry.BLOCK_KEY,
     new Identifier("fabric:needs_tool_level_0")
   );
 
-  public MineLevelGenerator(FabricDataGenerator dataGenerator) {
+  public MineLevelTagsGenerator(FabricDataGenerator dataGenerator) {
     super(dataGenerator);
   }
 

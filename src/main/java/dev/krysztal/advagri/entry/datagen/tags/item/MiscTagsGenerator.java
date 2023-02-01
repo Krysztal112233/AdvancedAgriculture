@@ -10,7 +10,7 @@ import net.minecraft.item.Items;
 import net.minecraft.tag.ItemTags;
 import net.minecraft.tag.TagKey;
 
-public class MiscTagGenerator extends FabricTagProvider.ItemTagProvider {
+public class MiscTagsGenerator extends FabricTagProvider.ItemTagProvider {
 
   private static final List<Item> PLANT_LIST = List.of(
     Items.FERN,
@@ -32,7 +32,7 @@ public class MiscTagGenerator extends FabricTagProvider.ItemTagProvider {
     AdvAgriBlocks.STRIPPED_GINKGO_LOG.asItem()
   );
 
-  public MiscTagGenerator(FabricDataGenerator dataGenerator) {
+  public MiscTagsGenerator(FabricDataGenerator dataGenerator) {
     super(dataGenerator);
   }
 

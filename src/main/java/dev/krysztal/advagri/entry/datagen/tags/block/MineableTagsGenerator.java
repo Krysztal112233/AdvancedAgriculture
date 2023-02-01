@@ -9,9 +9,9 @@ import net.fabricmc.fabric.api.mininglevel.v1.FabricMineableTags;
 import net.minecraft.block.Block;
 import net.minecraft.tag.BlockTags;
 
-public class MineableGenerator extends FabricTagProvider.BlockTagProvider {
+public class MineableTagsGenerator extends FabricTagProvider.BlockTagProvider {
 
-  public MineableGenerator(FabricDataGenerator dataGenerator) {
+  public MineableTagsGenerator(FabricDataGenerator dataGenerator) {
     super(dataGenerator);
   }
 

@@ -14,9 +14,9 @@ import net.minecraft.loot.context.LootContextTypes;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.util.Identifier;
 
-public class LootTablesGenerator extends SimpleFabricLootTableProvider {
+public class MiscLootTablesGenerator extends SimpleFabricLootTableProvider {
 
-  public LootTablesGenerator(FabricDataGenerator dataGenerator) {
+  public MiscLootTablesGenerator(FabricDataGenerator dataGenerator) {
     super(dataGenerator, LootContextTypes.BLOCK);
   }
 

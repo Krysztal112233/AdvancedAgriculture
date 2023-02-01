@@ -7,7 +7,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.item.Item;
 
-public class GinkgoLogsItemTagGenerator
+public class GinkgoLogsItemTagsGenerator
   extends FabricTagProvider.ItemTagProvider {
 
   private static final List<Item> GINKGO_LOGS_ITEM = List.of(
@@ -17,7 +17,7 @@ public class GinkgoLogsItemTagGenerator
     AdvAgriBlocks.STRIPPED_GINKGO_LOG.asItem()
   );
 
-  public GinkgoLogsItemTagGenerator(FabricDataGenerator dataGenerator) {
+  public GinkgoLogsItemTagsGenerator(FabricDataGenerator dataGenerator) {
     super(dataGenerator);
   }
 

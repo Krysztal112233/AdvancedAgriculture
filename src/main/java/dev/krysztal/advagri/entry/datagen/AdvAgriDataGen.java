@@ -1,16 +1,16 @@
 package dev.krysztal.advagri.entry.datagen;
 
-import dev.krysztal.advagri.entry.datagen.loottables.LootTablesGenerator;
+import dev.krysztal.advagri.entry.datagen.loottables.MiscLootTablesGenerator;
 import dev.krysztal.advagri.entry.datagen.models.CropModelsGenerator;
-import dev.krysztal.advagri.entry.datagen.models.ModelsGenerator;
-import dev.krysztal.advagri.entry.datagen.recipes.CropToSeedRecipeGenerator;
-import dev.krysztal.advagri.entry.datagen.recipes.FurnaceGenerator;
+import dev.krysztal.advagri.entry.datagen.models.MiscModelsGenerator;
+import dev.krysztal.advagri.entry.datagen.recipes.CropToSeedRecipesGenerator;
+import dev.krysztal.advagri.entry.datagen.recipes.FoodFurnaceRecipesGenerator;
 import dev.krysztal.advagri.entry.datagen.recipes.LogRecipesGenerator;
 import dev.krysztal.advagri.entry.datagen.tags.block.GinkgoLogsBlockTagGenerator;
-import dev.krysztal.advagri.entry.datagen.tags.block.MineLevelGenerator;
-import dev.krysztal.advagri.entry.datagen.tags.block.MineableGenerator;
-import dev.krysztal.advagri.entry.datagen.tags.item.GinkgoLogsItemTagGenerator;
-import dev.krysztal.advagri.entry.datagen.tags.item.MiscTagGenerator;
+import dev.krysztal.advagri.entry.datagen.tags.block.MineLevelTagsGenerator;
+import dev.krysztal.advagri.entry.datagen.tags.block.MineableTagsGenerator;
+import dev.krysztal.advagri.entry.datagen.tags.item.GinkgoLogsItemTagsGenerator;
+import dev.krysztal.advagri.entry.datagen.tags.item.MiscTagsGenerator;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 
@@ -21,23 +21,23 @@ public class AdvAgriDataGen implements DataGeneratorEntrypoint {
     FabricDataGenerator fabricDataGenerator
   ) {
     //===========================================================//
-    fabricDataGenerator.addProvider(ModelsGenerator::new);
+    fabricDataGenerator.addProvider(MiscModelsGenerator::new);
     fabricDataGenerator.addProvider(CropModelsGenerator::new);
 
     //===========================================================//
-    fabricDataGenerator.addProvider(LootTablesGenerator::new);
+    fabricDataGenerator.addProvider(MiscLootTablesGenerator::new);
 
     //===========================================================//
-    fabricDataGenerator.addProvider(MineLevelGenerator::new);
-    fabricDataGenerator.addProvider(MineableGenerator::new);
-    fabricDataGenerator.addProvider(MiscTagGenerator::new);
+    fabricDataGenerator.addProvider(MineLevelTagsGenerator::new);
+    fabricDataGenerator.addProvider(MineableTagsGenerator::new);
+    fabricDataGenerator.addProvider(MiscTagsGenerator::new);
 
     fabricDataGenerator.addProvider(GinkgoLogsBlockTagGenerator::new);
-    fabricDataGenerator.addProvider(GinkgoLogsItemTagGenerator::new);
+    fabricDataGenerator.addProvider(GinkgoLogsItemTagsGenerator::new);
     //===========================================================//
 
-    fabricDataGenerator.addProvider(FurnaceGenerator::new);
+    fabricDataGenerator.addProvider(FoodFurnaceRecipesGenerator::new);
     fabricDataGenerator.addProvider(LogRecipesGenerator::new);
-    fabricDataGenerator.addProvider(CropToSeedRecipeGenerator::new);
+    fabricDataGenerator.addProvider(CropToSeedRecipesGenerator::new);
   }
 }
