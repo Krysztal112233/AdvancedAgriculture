@@ -5,7 +5,6 @@ import dev.krysztal.advagri.foundation.AdvAgriTags;
 import java.util.List;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.tag.ItemTags;
@@ -31,13 +30,6 @@ public class MiscTagGenerator extends FabricTagProvider.ItemTagProvider {
     AdvAgriBlocks.GINKGO_WOOD.asItem(),
     AdvAgriBlocks.STRIPPED_GINKGO_WOOD.asItem(),
     AdvAgriBlocks.STRIPPED_GINKGO_LOG.asItem()
-  );
-
-  private static final List<Block> GINKGO_LOGS_BLOCK = List.of(
-    AdvAgriBlocks.GINKGO_LOG,
-    AdvAgriBlocks.GINKGO_WOOD,
-    AdvAgriBlocks.STRIPPED_GINKGO_WOOD,
-    AdvAgriBlocks.STRIPPED_GINKGO_LOG
   );
 
   public MiscTagGenerator(FabricDataGenerator dataGenerator) {
