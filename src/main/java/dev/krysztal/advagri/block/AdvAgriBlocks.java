@@ -264,9 +264,7 @@ public class AdvAgriBlocks {
         new WaterWellBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE)),
         "water_well_block"
       );
-  }
 
-  static {
     registryOverWorldOre(
       "sulphur_ore",
       AdvAgriConfiguredFeature.OverWorld.SULPHUR_ORE_CONFIGURED_FEATURE,

@@ -157,9 +157,7 @@ public class AdvAgriItems {
   @GenTypes
   public static Item GINKGO_NUTS;
 
-  public static void init() {}
-
-  static {
+  public static void init() {
     FERTILIZER =
       registry(
         new Fertilizer(

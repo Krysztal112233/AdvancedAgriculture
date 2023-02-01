@@ -1,8 +1,8 @@
-// 1.19.2	2023-01-26T20:06:57.390516	minecraft:block Loot Table
-8fe492b256e619f99c767ed311f19cb2082ffcc4 data\advagri\loot_tables\blocks\ginkgo_log.json
-fe2248eabade4b026d65a93602ba40b01c5b1887 data\advagri\loot_tables\blocks\stripped_ginkgo_wood.json
-53fbd50d65071bcca6fc7af7b3cf575d795a30c5 data\advagri\loot_tables\blocks\ginkgo_planks.json
-56d5133ef6469ea292ef677debc0850a1270968e data\advagri\loot_tables\blocks\hardened_soil.json
-7e1b877ee968d2c04fe65cdd47bda4926cbbb323 data\advagri\loot_tables\blocks\stripped_ginkgo_log.json
-62cea5ab9a16caf2a52d6b261863f31c8b540556 data\advagri\loot_tables\blocks\acidified_soil.json
-5e1f14387ba844e7294fe7f12e27602aeee1c5f4 data\advagri\loot_tables\blocks\ginkgo_wood.json
+// 1.19.2	2023-02-01T09:28:31.084905194	minecraft:block Loot Table
+62cea5ab9a16caf2a52d6b261863f31c8b540556 data/advagri/loot_tables/blocks/acidified_soil.json
+7e1b877ee968d2c04fe65cdd47bda4926cbbb323 data/advagri/loot_tables/blocks/stripped_ginkgo_log.json
+8fe492b256e619f99c767ed311f19cb2082ffcc4 data/advagri/loot_tables/blocks/ginkgo_log.json
+fe2248eabade4b026d65a93602ba40b01c5b1887 data/advagri/loot_tables/blocks/stripped_ginkgo_wood.json
+56d5133ef6469ea292ef677debc0850a1270968e data/advagri/loot_tables/blocks/hardened_soil.json
+5e1f14387ba844e7294fe7f12e27602aeee1c5f4 data/advagri/loot_tables/blocks/ginkgo_wood.json
+53fbd50d65071bcca6fc7af7b3cf575d795a30c5 data/advagri/loot_tables/blocks/ginkgo_planks.json

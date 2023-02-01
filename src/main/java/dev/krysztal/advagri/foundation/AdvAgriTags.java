@@ -44,6 +44,8 @@ public class AdvAgriTags {
     public static final TagKey<Item> PLANT;
     public static final TagKey<Item> GINKGO_LOGS;
 
+    public static void init() {}
+
     static {
       BAMBOO = registry("bamboo");
       PLANT = registry("plant");

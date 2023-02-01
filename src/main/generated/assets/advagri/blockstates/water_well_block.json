@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "advagri:block/water_well_block"
+    }
+  }
+}
