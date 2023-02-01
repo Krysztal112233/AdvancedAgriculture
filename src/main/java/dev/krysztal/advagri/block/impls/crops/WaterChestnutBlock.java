@@ -3,15 +3,19 @@ package dev.krysztal.advagri.block.impls.crops;
 import dev.krysztal.advagri.foundation.AdvAgriSolarTerm;
 import dev.krysztal.advagri.foundation.AdvAgriTags;
 import dev.krysztal.advagri.foundation.block.AdvAgriCropBlock;
+import dev.krysztal.advagri.item.AdvAgriItems;
 import lombok.Getter;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.fluid.Fluid;
+import net.minecraft.item.ItemConvertible;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.IntProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
+import net.minecraft.world.WorldView;
 
 public class WaterChestnutBlock extends AdvAgriCropBlock {
 
@@ -46,6 +50,11 @@ public class WaterChestnutBlock extends AdvAgriCropBlock {
     StateManager.Builder<Block, BlockState> builder
   ) {
     builder.add(AGE);
+  }
+
+  @Override
+  protected ItemConvertible getSeedsItem() {
+    return AdvAgriItems.WATER_CHESTNUT;
   }
 
   @Override

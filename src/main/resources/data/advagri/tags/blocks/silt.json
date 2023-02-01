@@ -1,4 +1,4 @@
 {
   "replace": "false",
-  "values": ["minecraft:mud"]
+  "values": ["minecraft:mud", "minecraft:clay"]
 }

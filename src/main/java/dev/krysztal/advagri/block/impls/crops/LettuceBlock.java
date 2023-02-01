@@ -43,7 +43,7 @@ public class LettuceBlock extends AdvAgriCropBlock {
 
   @Override
   protected ItemConvertible getSeedsItem() {
-    return AdvAgriItems.GARLIC;
+    return AdvAgriItems.SEED_BAG_LETTUCE;
   }
 
   public LettuceBlock(Settings settings) {

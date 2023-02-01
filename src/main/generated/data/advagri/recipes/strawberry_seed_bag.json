@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "advagri:strawberry"
+    }
+  ],
+  "result": {
+    "count": 8,
+    "item": "advagri:strawberry_seed_bag"
+  }
+}

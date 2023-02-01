@@ -49,7 +49,7 @@ public class SweetPotatoBlock extends AdvAgriCropBlock {
   }
 
   @Override
-  protected void appendProperties(
+  public void appendProperties(
     StateManager.Builder<Block, BlockState> builder
   ) {
     builder.add(AGE);

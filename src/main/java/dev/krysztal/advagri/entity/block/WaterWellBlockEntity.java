@@ -39,6 +39,7 @@ public class WaterWellBlockEntity extends BlockEntity {
     WaterWellBlockEntity entity
   ) {
     this.setWet(world.getBlockState(pos.up()).getBlock() == Blocks.WATER);
+
     this.markDirty();
   }
 

@@ -3,6 +3,7 @@ package dev.krysztal.advagri.entry.datagen;
 import dev.krysztal.advagri.entry.datagen.loottables.LootTablesGenerator;
 import dev.krysztal.advagri.entry.datagen.models.CropModelsGenerator;
 import dev.krysztal.advagri.entry.datagen.models.ModelsGenerator;
+import dev.krysztal.advagri.entry.datagen.recipes.CropToSeedRecipeGenerator;
 import dev.krysztal.advagri.entry.datagen.recipes.FurnaceGenerator;
 import dev.krysztal.advagri.entry.datagen.recipes.LogRecipesGenerator;
 import dev.krysztal.advagri.entry.datagen.tags.block.GinkgoLogsBlockTagGenerator;
@@ -37,5 +38,6 @@ public class AdvAgriDataGen implements DataGeneratorEntrypoint {
 
     fabricDataGenerator.addProvider(FurnaceGenerator::new);
     fabricDataGenerator.addProvider(LogRecipesGenerator::new);
+    fabricDataGenerator.addProvider(CropToSeedRecipeGenerator::new);
   }
 }

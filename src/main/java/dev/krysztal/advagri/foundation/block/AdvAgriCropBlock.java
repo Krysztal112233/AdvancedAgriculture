@@ -4,22 +4,21 @@ import dev.krysztal.advagri.foundation.AdvAgriGameRules;
 import dev.krysztal.advagri.foundation.AdvAgriSolarTerm;
 import dev.krysztal.advagri.foundation.persistents.SolarTermPersistentState;
 import lombok.Getter;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.CropBlock;
 import net.minecraft.state.property.IntProperty;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.util.shape.VoxelShape;
+import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldView;
 
 public abstract class AdvAgriCropBlock extends CropBlock {
 
   @Getter
-  private AdvAgriSolarTerm rightSolarTerm = AdvAgriSolarTerm.SPRING;
-
-  public AdvAgriCropBlock(Settings settings) {
-    super(settings);
-  }
+  private AdvAgriSolarTerm rightSolarTerm;
 
   public AdvAgriCropBlock(Settings settings, AdvAgriSolarTerm rightSolarTerm) {
     super(settings);

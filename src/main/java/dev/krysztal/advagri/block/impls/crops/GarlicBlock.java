@@ -2,10 +2,12 @@ package dev.krysztal.advagri.block.impls.crops;
 
 import dev.krysztal.advagri.foundation.AdvAgriSolarTerm;
 import dev.krysztal.advagri.foundation.block.AdvAgriCropBlock;
+import dev.krysztal.advagri.item.AdvAgriItems;
 import lombok.Getter;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ShapeContext;
+import net.minecraft.item.ItemConvertible;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.IntProperty;
 import net.minecraft.util.math.BlockPos;
@@ -45,6 +47,11 @@ public class GarlicBlock extends AdvAgriCropBlock {
     ShapeContext context
   ) {
     return AdvAgriCropBlock.getShapeOfAge(state, AGE, voxelShapes);
+  }
+
+  @Override
+  protected ItemConvertible getSeedsItem() {
+    return AdvAgriItems.GARLIC;
   }
 
   @Override
