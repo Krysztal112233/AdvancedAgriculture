@@ -47,7 +47,7 @@ public class AdvAgriBlocks {
       GenType.SimpleBlockModel, GenType.MinePickaxe, GenType.MineLevel1,
     }
   )
-  public static Block PHOS_ORE;
+  public static Block PHOSPHATE_ORE;
 
   @GenTypes(
     types = {
@@ -140,7 +140,7 @@ public class AdvAgriBlocks {
   public static void init() {
     ACIDIFIED_SOIL = registry(defaultBlock(Blocks.DIRT), "acidified_soil");
     HARDENED_SOIL = registry(defaultBlock(Blocks.DIRT), "hardened_soil");
-    PHOS_ORE =
+    PHOSPHATE_ORE =
       registry(
         new Block(
           FabricBlockSettings
@@ -148,7 +148,7 @@ public class AdvAgriBlocks {
             .luminance(8)
             .requiresTool()
         ),
-        "phos_ore"
+        "phosphate_ore"
       );
     SULPHUR_ORE =
       registry(
@@ -276,9 +276,9 @@ public class AdvAgriBlocks {
       AdvAgriPlacedFeatures.OverWorld.VERMICULITE_ORE_PLACED_FEATURE
     );
     registryOverWorldOre(
-      "phos_ore",
-      AdvAgriConfiguredFeature.OverWorld.PHOS_ORE_CONFIGURED_FEATURE,
-      AdvAgriPlacedFeatures.OverWorld.PHOS_ORE_PLACED_FEATURE
+      "phosphate_ore",
+      AdvAgriConfiguredFeature.OverWorld.PHOSPHATE_ORE_CONFIGURED_FEATURE,
+      AdvAgriPlacedFeatures.OverWorld.PHOSPHATE_ORE_PLACED_FEATURE
     );
 
     registryNetherOre(

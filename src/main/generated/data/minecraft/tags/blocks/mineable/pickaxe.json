@@ -1,7 +1,7 @@
 {
   "replace": false,
   "values": [
-    "advagri:phos_ore",
+    "advagri:phosphate_ore",
     "advagri:sulphur_ore",
     "advagri:nether_sulphur_ore"
   ]

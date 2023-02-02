@@ -3,24 +3,25 @@ package dev.krysztal.advagri.foundation.block;
 import dev.krysztal.advagri.foundation.AdvAgriGameRules;
 import dev.krysztal.advagri.foundation.AdvAgriSolarTerm;
 import dev.krysztal.advagri.foundation.persistents.SolarTermPersistentState;
+import javax.annotation.Nullable;
 import lombok.Getter;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.CropBlock;
 import net.minecraft.state.property.IntProperty;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.util.shape.VoxelShape;
-import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldView;
 
 public abstract class AdvAgriCropBlock extends CropBlock {
 
   @Getter
   private AdvAgriSolarTerm rightSolarTerm;
 
-  public AdvAgriCropBlock(Settings settings, AdvAgriSolarTerm rightSolarTerm) {
+  public AdvAgriCropBlock(
+    Settings settings,
+    @Nullable AdvAgriSolarTerm rightSolarTerm
+  ) {
     super(settings);
     this.rightSolarTerm = rightSolarTerm;
   }
@@ -40,6 +41,8 @@ public abstract class AdvAgriCropBlock extends CropBlock {
     BlockPos pos,
     BlockState state
   ) {
+    if (this.rightSolarTerm == null) return true;
+
     // Check it allow season change.
     // If not, the crops will grow normally.
     if (
@@ -52,7 +55,7 @@ public abstract class AdvAgriCropBlock extends CropBlock {
       SolarTermPersistentState.get(world).getSeason()
     );
 
-    // Calc the grow chance.
+    // Calc the growth chance.
     var growChance = (int) (
       ((double) stepLength / (double) AdvAgriSolarTerm.values().length) * 100
     );

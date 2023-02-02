@@ -30,8 +30,8 @@ public class AdvAgriPlacedFeatures {
       YOffset.getBottom(),
       YOffset.fixed(64)
     );
-    public static final PlacedFeature PHOS_ORE_PLACED_FEATURE = getPlacedFeature(
-      PHOS_ORE_CONFIGURED_FEATURE,
+    public static final PlacedFeature PHOSPHATE_ORE_PLACED_FEATURE = getPlacedFeature(
+      PHOSPHATE_ORE_CONFIGURED_FEATURE,
       2,
       YOffset.getBottom(),
       YOffset.getTop()

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "advagri:block/phos_ore"
+    "all": "advagri:block/phosphate_ore"
   }
 }

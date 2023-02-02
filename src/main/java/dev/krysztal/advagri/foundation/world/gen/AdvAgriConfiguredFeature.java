@@ -22,9 +22,9 @@ public class AdvAgriConfiguredFeature {
       8
     ); // vein size
 
-    public static final ConfiguredFeature<?, ?> PHOS_ORE_CONFIGURED_FEATURE = getConfiguredFeature(
+    public static final ConfiguredFeature<?, ?> PHOSPHATE_ORE_CONFIGURED_FEATURE = getConfiguredFeature(
       OreConfiguredFeatures.STONE_ORE_REPLACEABLES,
-      AdvAgriBlocks.PHOS_ORE,
+      AdvAgriBlocks.PHOSPHATE_ORE,
       16
     ); // vein size
   }
