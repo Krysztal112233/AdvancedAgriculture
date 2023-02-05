@@ -18,6 +18,7 @@
     "fabric-datagen": ["dev.krysztal.advagri.entry.datagen.AdvAgriDataGen"]
   },
   "mixins": ["advagri.mixins.json"],
+  "accessWidener": "advagri.accesswidener",
   "depends": {
     "fabricloader": ">=0.7.4",
     "fabric": "*",
