@@ -7,7 +7,11 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.explosion.Explosion;
@@ -45,6 +49,24 @@ public class SulphurOreBlock extends Block {
         2F,
         Explosion.DestructionType.BREAK
       );
+    }
+  }
+
+  @Override
+  public void onStacksDropped(
+    BlockState state,
+    ServerWorld world,
+    BlockPos pos,
+    ItemStack stack,
+    boolean dropExperience
+  ) {
+    super.onStacksDropped(state, world, pos, stack, dropExperience);
+    if (
+      dropExperience &&
+      EnchantmentHelper.getLevel(Enchantments.SILK_TOUCH, stack) == 0
+    ) {
+      int i = 5 + world.random.nextInt(5);
+      this.dropExperience(world, pos, i);
     }
   }
 }

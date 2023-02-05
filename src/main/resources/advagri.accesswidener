@@ -8,3 +8,4 @@ accessible method net/minecraft/item/Item isIn (Lnet/minecraft/item/ItemGroup;)Z
 accessible field net/minecraft/state/property/IntProperty field_37656 I
 accessible field net/minecraft/server/world/ServerWorld worldProperties Lnet/minecraft/world/level/ServerWorldProperties;
 accessible method net/minecraft/block/entity/BlockEntityType create (Ljava/lang/String;Lnet/minecraft/block/entity/BlockEntityType$Builder;)Lnet/minecraft/block/entity/BlockEntityType;
+accessible method net/minecraft/block/Block dropExperience (Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/util/math/BlockPos;I)V
