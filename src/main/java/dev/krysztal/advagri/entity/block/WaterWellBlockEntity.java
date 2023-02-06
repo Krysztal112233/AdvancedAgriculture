@@ -6,8 +6,12 @@ import lombok.Setter;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.entity.ItemEntity;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Box;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
 public class WaterWellBlockEntity extends BlockEntity {
@@ -22,7 +26,7 @@ public class WaterWellBlockEntity extends BlockEntity {
 
   @Getter
   @Setter
-  private int calciumElement = 0;
+  private int nitrogenElement = 0;
 
   @Getter
   @Setter
@@ -40,6 +44,14 @@ public class WaterWellBlockEntity extends BlockEntity {
   ) {
     this.setWet(world.getBlockState(pos.up()).getBlock() == Blocks.WATER);
 
+    var itemEntities = world.getEntitiesByClass(
+      ItemEntity.class,
+      Box.from(new Vec3d(pos.getX(), pos.getY(), pos.up(1).getZ())),
+      EntityPredicates.VALID_ENTITY
+    );
+
+    for (var itemEntity : itemEntities) {}
+
     this.markDirty();
   }
 
@@ -47,7 +59,7 @@ public class WaterWellBlockEntity extends BlockEntity {
   public void readNbt(NbtCompound nbt) {
     nbt.putInt("PotassiumElement", this.getPotassiumElement());
     nbt.putInt("PhosphorusElement", this.getPhosphorusElement());
-    nbt.putInt("CalciumElement", this.getCalciumElement());
+    nbt.putInt("NitrogenElement", this.getNitrogenElement());
 
     nbt.putBoolean("Wet", this.isWet());
 
@@ -58,7 +70,7 @@ public class WaterWellBlockEntity extends BlockEntity {
   protected void writeNbt(NbtCompound nbt) {
     this.setPotassiumElement(nbt.getInt("PotassiumElement"));
     this.setPhosphorusElement(nbt.getInt("PhosphorusElement"));
-    this.setCalciumElement(nbt.getInt("CalciumElement"));
+    this.setNitrogenElement(nbt.getInt("NitrogenElement"));
 
     this.setWet(nbt.getBoolean("Wet"));
 

@@ -1,7 +1,7 @@
 package dev.krysztal.advagri.event;
 
-import dev.krysztal.advagri.api.event.SolarTermChangeEvent;
-import dev.krysztal.advagri.api.event.server.DayChangeEvent.DayChange;
+import dev.krysztal.advagri.foundation.event.SolarTermChangeEvent;
+import dev.krysztal.advagri.foundation.event.server.DayChangeEvent.DayChange;
 import dev.krysztal.advagri.foundation.AdvAgriGameRules;
 import dev.krysztal.advagri.foundation.AdvAgriSolarTerm;
 import dev.krysztal.advagri.foundation.persistents.SolarTermPersistentState;

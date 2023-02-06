@@ -1,4 +1,4 @@
-package dev.krysztal.advagri.api.event.server;
+package dev.krysztal.advagri.foundation.event;
 
 import java.util.Arrays;
 import net.fabricmc.fabric.api.event.Event;
@@ -6,19 +6,11 @@ import net.fabricmc.fabric.api.event.EventFactory;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.world.ServerWorld;
 
-public class DayChangeEvent {
+@SuppressWarnings("unused")
+public class SolarTermChangeEvent {
 
-  public static Event<DayChange> AFTER = EventFactory.createArrayBacked(
-    DayChange.class,
-    listeners ->
-      (minecraftServer, serverWorld) ->
-        Arrays
-          .stream(listeners)
-          .forEach($ -> $.interact(minecraftServer, serverWorld))
-  );
-
-  public static Event<DayChange> BEFORE = EventFactory.createArrayBacked(
-    DayChange.class,
+  public static Event<SeasonChange> EVENT = EventFactory.createArrayBacked(
+    SeasonChange.class,
     listeners ->
       (minecraftServer, serverWorld) ->
         Arrays
@@ -27,7 +19,7 @@ public class DayChangeEvent {
   );
 
   @FunctionalInterface
-  public interface DayChange {
+  public interface SeasonChange {
     public void interact(
       MinecraftServer minecraftServer,
       ServerWorld serverWorld

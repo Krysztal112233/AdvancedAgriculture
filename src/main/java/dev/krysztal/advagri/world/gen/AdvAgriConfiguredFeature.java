@@ -1,4 +1,4 @@
-package dev.krysztal.advagri.foundation.world.gen;
+package dev.krysztal.advagri.world.gen;
 
 import dev.krysztal.advagri.block.AdvAgriBlocks;
 import net.minecraft.block.Block;

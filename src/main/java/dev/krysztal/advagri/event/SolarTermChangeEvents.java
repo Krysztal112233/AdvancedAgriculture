@@ -1,6 +1,6 @@
 package dev.krysztal.advagri.event;
 
-import dev.krysztal.advagri.api.event.SolarTermChangeEvent;
+import dev.krysztal.advagri.foundation.event.SolarTermChangeEvent;
 
 public class SolarTermChangeEvents {
 

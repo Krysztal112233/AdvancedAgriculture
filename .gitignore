@@ -32,4 +32,10 @@ run/
 
 /**/*/*~
 
+# Ignore caches
 src/main/generated/.cache
+
+# Ignore nodejs
+node_modules/
+yarn.lock
+package.json

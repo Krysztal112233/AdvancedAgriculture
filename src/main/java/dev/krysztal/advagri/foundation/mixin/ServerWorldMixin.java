@@ -1,6 +1,6 @@
 package dev.krysztal.advagri.foundation.mixin;
 
-import dev.krysztal.advagri.api.event.server.DayChangeEvent;
+import dev.krysztal.advagri.foundation.event.server.DayChangeEvent;
 import net.minecraft.server.world.ServerWorld;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

@@ -1,7 +1,7 @@
-package dev.krysztal.advagri.foundation.world.gen;
+package dev.krysztal.advagri.world.gen;
 
-import static dev.krysztal.advagri.foundation.world.gen.AdvAgriConfiguredFeature.Nether.NETHER_SULPHUR_ORE_CONFIGURED_FEATURE;
-import static dev.krysztal.advagri.foundation.world.gen.AdvAgriConfiguredFeature.OverWorld.*;
+import static dev.krysztal.advagri.world.gen.AdvAgriConfiguredFeature.Nether.NETHER_SULPHUR_ORE_CONFIGURED_FEATURE;
+import static dev.krysztal.advagri.world.gen.AdvAgriConfiguredFeature.OverWorld.*;
 
 import java.util.Arrays;
 import net.minecraft.util.registry.RegistryEntry;
