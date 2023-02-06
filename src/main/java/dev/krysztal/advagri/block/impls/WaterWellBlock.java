@@ -14,9 +14,6 @@ import org.jetbrains.annotations.Nullable;
 
 public class WaterWellBlock extends BlockWithEntity {
 
-  private int tickCount = 0;
-  private final int maxTickCount = 8 + (new Random().nextInt(-4, 4));
-
   public WaterWellBlock(Settings settings) {
     super(settings);
   }
@@ -39,17 +36,12 @@ public class WaterWellBlock extends BlockWithEntity {
     BlockState state,
     BlockEntityType<T> type
   ) {
-    tickCount++;
-
-    if (tickCount >= maxTickCount) {
-      tickCount = 0;
-      return (world1, pos, state1, be) ->
-        ((WaterWellBlockEntity) be).tick(
-            world1,
-            pos,
-            state1,
-            (WaterWellBlockEntity) be
-          );
-    } else return super.getTicker(world, state, type);
+    return (world1, pos, state1, be) ->
+      ((WaterWellBlockEntity) be).tick(
+          world1,
+          pos,
+          state1,
+          (WaterWellBlockEntity) be
+        );
   }
 }

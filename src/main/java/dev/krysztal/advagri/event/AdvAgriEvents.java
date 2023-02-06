@@ -1,6 +1,6 @@
 package dev.krysztal.advagri.event;
 
-import dev.krysztal.advagri.foundation.event.server.DayChangeEvent;
+import dev.krysztal.advagri.foundation.api.event.server.DayChangeEvent;
 
 public class AdvAgriEvents {
 

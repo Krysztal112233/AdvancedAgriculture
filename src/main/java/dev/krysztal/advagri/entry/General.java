@@ -8,10 +8,12 @@ import dev.krysztal.advagri.foundation.AdvAgriTags;
 import dev.krysztal.advagri.foundation.resources.AdvAgriElementResourceManager;
 import dev.krysztal.advagri.item.AdvAgriItems;
 import dev.krysztal.advagri.loot.AdvAgriLoot;
+import lombok.extern.slf4j.Slf4j;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.minecraft.resource.ResourceType;
 
+@Slf4j
 public class General implements ModInitializer {
 
   @Override

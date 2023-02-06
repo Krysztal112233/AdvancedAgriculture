@@ -13,8 +13,7 @@ public class ItemElementsCombination {
     ItemConvertible item,
     ElementsCombination elementsCombination
   ) {
-    this.item =
-      item.asItem().getRegistryEntry().getKey().get().getValue().toString();
+    this.item = item.asItem().getIdentifier().toString();
     this.elementsCombination = elementsCombination;
   }
 
@@ -24,8 +23,7 @@ public class ItemElementsCombination {
     int phosphorus,
     int potassium
   ) {
-    this.item =
-      item.asItem().getRegistryEntry().getKey().get().getValue().toString();
+    this.item = item.asItem().getIdentifier().toString();
     this.elementsCombination =
       new ElementsCombination(nitrogen, phosphorus, potassium);
   }
@@ -37,8 +35,7 @@ public class ItemElementsCombination {
   private ElementsCombination elementsCombination;
 
   public ItemElementsCombination setItem(ItemConvertible item) {
-    this.item =
-      item.asItem().getRegistryEntry().getKey().get().getValue().toString();
+    this.item = item.asItem().getIdentifier().toString();
     return this;
   }
 
