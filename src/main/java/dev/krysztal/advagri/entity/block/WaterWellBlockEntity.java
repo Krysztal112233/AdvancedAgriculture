@@ -4,14 +4,19 @@ import dev.krysztal.advagri.entity.AdvAgriEntities;
 import dev.krysztal.advagri.foundation.resources.AdvAgriElementResourceManager;
 import dev.krysztal.advagri.foundation.resources.element.ElementsCombination;
 import java.util.Random;
+import javax.annotation.Nullable;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.network.Packet;
+import net.minecraft.network.listener.ClientPlayPacketListener;
+import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
 import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
@@ -54,17 +59,17 @@ public class WaterWellBlockEntity extends BlockEntity {
 
     this.setWet(world.getBlockState(pos.up()).getBlock() == Blocks.WATER);
 
-    log.info(
-      new Vec3d(pos.getX() + 0.5, pos.up(1).getY() + 0.5, pos.getZ() + 0.5)
-        .toString()
-    );
-
-    log.info(
-      "{} {} {}",
-      this.nitrogenElement,
-      this.phosphorusElement,
-      this.phosphorusElement
-    );
+//    log.info(
+//      new Vec3d(pos.getX() + 0.5, pos.up(1).getY() + 0.5, pos.getZ() + 0.5)
+//        .toString()
+//    );
+//
+//    log.info(
+//      "{} {} {}",
+//      this.nitrogenElement,
+//      this.phosphorusElement,
+//      this.phosphorusElement
+//    );
 
     var itemEntities = world.getEntitiesByClass(
       ItemEntity.class,
@@ -96,8 +101,8 @@ public class WaterWellBlockEntity extends BlockEntity {
 
       break;
     }
-
-    BlockEntity.markDirty(world, pos, state);
+    world.updateListeners(pos, state, state, Block.NOTIFY_LISTENERS);
+    this.markDirty();
   }
 
   @Override
@@ -120,5 +125,15 @@ public class WaterWellBlockEntity extends BlockEntity {
     this.setWet(nbt.getBoolean("Wet"));
 
     super.writeNbt(nbt);
+  }
+
+  @Override
+  public Packet<ClientPlayPacketListener> toUpdatePacket() {
+    return BlockEntityUpdateS2CPacket.create(this);
+  }
+
+  @Override
+  public NbtCompound toInitialChunkDataNbt() {
+    return createNbt();
   }
 }
