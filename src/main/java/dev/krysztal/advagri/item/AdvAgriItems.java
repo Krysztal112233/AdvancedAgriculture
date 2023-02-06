@@ -67,7 +67,7 @@ public class AdvAgriItems {
   public static Item BAMBOO_SAPLING;
 
   @GenTypes
-  public static Item PHOS;
+  public static Item PHOSPHATE;
 
   @GenTypes
   public static Item VERMICULITE;
@@ -180,7 +180,7 @@ public class AdvAgriItems {
     BAMBOO_CHARCOAL = registry("bamboo_charcoal");
     BAMBOO_CHARCOAL_BALL = registry("bamboo_charcoal_ball");
     BAMBOO_SAPLING = registry("bamboo_sapling");
-    PHOS = registry("phos");
+    PHOSPHATE = registry("phosphate");
     VERMICULITE = registry("vermiculite");
     SULFUR = registry("sulfur");
   }
