@@ -3,7 +3,7 @@
   "minVersion": "0.8",
   "package": "dev.krysztal.advagri.foundation.mixin",
   "compatibilityLevel": "JAVA_17",
-  "mixins": ["ServerWorldMixin"],
+  "mixins": ["ServerWorldMixin", "ItemMixin"],
   "client": [],
   "server": [],
   "injectors": {

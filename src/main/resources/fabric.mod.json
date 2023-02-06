@@ -19,6 +19,15 @@
   },
   "mixins": ["advagri.mixins.json"],
   "accessWidener": "advagri.accesswidener",
+
+  "custom": {
+    "loom:injected_interfaces": {
+      "net/minecraft/class_1792": [
+        "dev/krysztal/advagri/foundation/api/injection/method/ItemIdentifierGetter"
+      ]
+    }
+  },
+
   "depends": {
     "fabricloader": ">=0.7.4",
     "fabric": "*",
