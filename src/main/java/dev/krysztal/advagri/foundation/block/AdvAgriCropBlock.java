@@ -2,7 +2,7 @@ package dev.krysztal.advagri.foundation.block;
 
 import dev.krysztal.advagri.foundation.AdvAgriGameRules;
 import dev.krysztal.advagri.foundation.AdvAgriSolarTerm;
-import dev.krysztal.advagri.foundation.persistents.SolarTermPersistentState;
+import dev.krysztal.advagri.foundation.persistent.SolarTermPersistentState;
 import javax.annotation.Nullable;
 import lombok.Getter;
 import net.minecraft.block.BlockState;

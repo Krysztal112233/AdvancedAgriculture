@@ -1,8 +1,8 @@
 package dev.krysztal.advagri.foundation.datagen;
 
 import com.google.gson.Gson;
-import dev.krysztal.advagri.foundation.resources.element.ElementsCombination;
-import dev.krysztal.advagri.foundation.resources.element.ItemElementsCombination;
+import dev.krysztal.advagri.foundation.resource.element.ElementsCombination;
+import dev.krysztal.advagri.foundation.resource.element.ItemElementsCombination;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;

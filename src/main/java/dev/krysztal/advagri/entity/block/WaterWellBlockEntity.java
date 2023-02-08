@@ -1,7 +1,7 @@
 package dev.krysztal.advagri.entity.block;
 
 import dev.krysztal.advagri.entity.AdvAgriEntities;
-import dev.krysztal.advagri.foundation.resources.AdvAgriElementResourceManager;
+import dev.krysztal.advagri.foundation.resource.AdvAgriElementResourceManager;
 import java.util.Random;
 import javax.annotation.Nullable;
 import lombok.Getter;

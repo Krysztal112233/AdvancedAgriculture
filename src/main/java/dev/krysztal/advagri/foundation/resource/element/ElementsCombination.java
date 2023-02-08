@@ -1,4 +1,4 @@
-package dev.krysztal.advagri.foundation.resources.element;
+package dev.krysztal.advagri.foundation.resource.element;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

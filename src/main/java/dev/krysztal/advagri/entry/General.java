@@ -5,7 +5,7 @@ import dev.krysztal.advagri.entity.AdvAgriEntities;
 import dev.krysztal.advagri.event.AdvAgriEvents;
 import dev.krysztal.advagri.foundation.AdvAgriGameRules;
 import dev.krysztal.advagri.foundation.AdvAgriTags;
-import dev.krysztal.advagri.foundation.resources.AdvAgriElementResourceManager;
+import dev.krysztal.advagri.foundation.resource.AdvAgriElementResourceManager;
 import dev.krysztal.advagri.item.AdvAgriItems;
 import dev.krysztal.advagri.loot.AdvAgriLoot;
 import lombok.extern.slf4j.Slf4j;

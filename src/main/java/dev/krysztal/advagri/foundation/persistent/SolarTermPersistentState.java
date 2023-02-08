@@ -1,4 +1,4 @@
-package dev.krysztal.advagri.foundation.persistents;
+package dev.krysztal.advagri.foundation.persistent;
 
 import dev.krysztal.advagri.foundation.AdvAgriSolarTerm;
 import java.util.Objects;
