@@ -1,5 +1,6 @@
 package dev.krysztal.advagri.foundation;
 
+import dev.krysztal.advagri.effect.AdvAgriEffects;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.FoodComponent;
@@ -13,6 +14,7 @@ public class AdvAgriFoodComponents {
   public static final FoodComponent WATER_CHESTNUT;
   public static final FoodComponent ROASTED_ACORNS;
   public static final FoodComponent GINKGO_NUTS;
+  public static final FoodComponent AMETHYST_JELLY;
 
   static {
     ASPARAGUS =
@@ -106,6 +108,21 @@ public class AdvAgriFoodComponents {
         )
         .snack()
         .alwaysEdible()
+        .build();
+
+    AMETHYST_JELLY =
+      new FoodComponent.Builder()
+        .hunger(4)
+        .saturationModifier(0.5F)
+        .statusEffect(
+          new StatusEffectInstance(AdvAgriEffects.LUBRICATION, 10 * 20),
+          1F
+        )
+        .statusEffect(
+          new StatusEffectInstance(AdvAgriEffects.LUBRICATION, 10 * 20, 13),
+          0.01F
+        )
+        .snack()
         .build();
   }
 }

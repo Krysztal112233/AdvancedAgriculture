@@ -153,6 +153,9 @@ public class AdvAgriItems {
   @GenTypes
   public static Item GINKGO_NUTS;
 
+  @GenTypes
+  public static Item AMETHYST_JELLY;
+
   public static void init() {
     FERTILIZER =
       registry(
@@ -291,6 +294,16 @@ public class AdvAgriItems {
             .food(AdvAgriFoodComponents.GINKGO_NUTS)
         ),
         "ginkgo_nuts"
+      );
+
+    AMETHYST_JELLY =
+      registry(
+        new Item(
+          new FabricItemSettings()
+            .group(ItemGroup.FOOD)
+            .food(AdvAgriFoodComponents.AMETHYST_JELLY)
+        ),
+        "amethyst_jelly"
       );
   }
 
