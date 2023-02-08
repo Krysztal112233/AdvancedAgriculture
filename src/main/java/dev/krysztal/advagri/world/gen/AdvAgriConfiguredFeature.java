@@ -3,7 +3,10 @@ package dev.krysztal.advagri.world.gen;
 import dev.krysztal.advagri.block.AdvAgriBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.structure.rule.RuleTest;
-import net.minecraft.world.gen.feature.*;
+import net.minecraft.world.gen.feature.ConfiguredFeature;
+import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.OreConfiguredFeatures;
+import net.minecraft.world.gen.feature.OreFeatureConfig;
 import org.jetbrains.annotations.NotNull;
 
 public class AdvAgriConfiguredFeature {

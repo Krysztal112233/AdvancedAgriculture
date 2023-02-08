@@ -2,22 +2,19 @@ package dev.krysztal.advagri.entity.block;
 
 import dev.krysztal.advagri.entity.AdvAgriEntities;
 import dev.krysztal.advagri.foundation.resources.AdvAgriElementResourceManager;
-import dev.krysztal.advagri.foundation.resources.element.ElementsCombination;
 import java.util.Random;
 import javax.annotation.Nullable;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.network.Packet;
-import net.minecraft.network.listener.ClientPlayPacketListener;
 import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
 import net.minecraft.predicate.entity.EntityPredicates;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
@@ -55,25 +52,15 @@ public class WaterWellBlockEntity extends BlockEntity {
     BlockState state,
     WaterWellBlockEntity entity
   ) {
+    if (world.isClient()) return;
+
     if (++tickCount >= maxTickCount) tickCount = 0; else return;
 
     this.setWet(world.getBlockState(pos.up()).getBlock() == Blocks.WATER);
 
-//    log.info(
-//      new Vec3d(pos.getX() + 0.5, pos.up(1).getY() + 0.5, pos.getZ() + 0.5)
-//        .toString()
-//    );
-//
-//    log.info(
-//      "{} {} {}",
-//      this.nitrogenElement,
-//      this.phosphorusElement,
-//      this.phosphorusElement
-//    );
-
     var itemEntities = world.getEntitiesByClass(
       ItemEntity.class,
-      Box.from(new Vec3d(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5)),
+      Box.from(new Vec3d(pos.getX(), pos.up().getY() + 0.5, pos.getZ())),
       EntityPredicates.VALID_ENTITY
     );
 
@@ -101,39 +88,43 @@ public class WaterWellBlockEntity extends BlockEntity {
 
       break;
     }
-    world.updateListeners(pos, state, state, Block.NOTIFY_LISTENERS);
+
     this.markDirty();
+
+    if (!world.isClient()) ((ServerWorld) world).getChunkManager()
+      .markForUpdate(pos);
   }
 
   @Override
   public void readNbt(NbtCompound nbt) {
-    nbt.putInt("PotassiumElement", this.getPotassiumElement());
-    nbt.putInt("PhosphorusElement", this.getPhosphorusElement());
-    nbt.putInt("NitrogenElement", this.getNitrogenElement());
-
-    nbt.putBoolean("Wet", this.isWet());
-
-    super.readNbt(nbt);
-  }
-
-  @Override
-  protected void writeNbt(NbtCompound nbt) {
     this.setPotassiumElement(nbt.getInt("PotassiumElement"));
     this.setPhosphorusElement(nbt.getInt("PhosphorusElement"));
     this.setNitrogenElement(nbt.getInt("NitrogenElement"));
 
     this.setWet(nbt.getBoolean("Wet"));
 
-    super.writeNbt(nbt);
+    super.readNbt(nbt);
   }
 
   @Override
-  public Packet<ClientPlayPacketListener> toUpdatePacket() {
+  protected void writeNbt(NbtCompound nbt) {
+    nbt.putInt("PotassiumElement", this.getPotassiumElement());
+    nbt.putInt("PhosphorusElement", this.getPhosphorusElement());
+    nbt.putInt("NitrogenElement", this.getNitrogenElement());
+
+    nbt.putBoolean("Wet", this.isWet());
+
+    super.writeNbt(nbt);
+  }
+
+  @Nullable
+  @Override
+  public BlockEntityUpdateS2CPacket toUpdatePacket() {
     return BlockEntityUpdateS2CPacket.create(this);
   }
 
   @Override
   public NbtCompound toInitialChunkDataNbt() {
-    return createNbt();
+    return this.createNbt();
   }
 }
