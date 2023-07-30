@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/crop",
-  "textures": {
-    "crop": "advagri:block/garlic_block_stage3"
-  }
-}

@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column_horizontal",
-  "textures": {
-    "end": "advagri:block/ginkgo_log_top",
-    "side": "advagri:block/ginkgo_log"
-  }
-}

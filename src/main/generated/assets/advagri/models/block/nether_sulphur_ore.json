@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "advagri:block/nether_sulphur_ore"
-  }
-}
