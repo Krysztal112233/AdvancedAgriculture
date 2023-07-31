@@ -1,8 +1,8 @@
 package dev.krysztal.advagri.registry
 
-import io.wispforest.owo.registration.reflect.ItemRegistryContainer
+import io.wispforest.owo.registration.reflect.BlockRegistryContainer
 
-class AdvAgriProductItems() : ItemRegistryContainer {
+class AdvAgriPlantBlocks() : BlockRegistryContainer {
     companion object {
 
         fun init() = Unit

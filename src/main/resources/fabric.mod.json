@@ -26,6 +26,9 @@
         "value": "dev.krysztal.advagri.AdvAgriDataGenerator",
         "adapter": "kotlin"
       }
+    ],
+    "cardinal-components": [
+      "dev.krysztal.advagri.foundation.component.WorldSeasonalComponent"
     ]
   },
   "mixins": [
@@ -38,5 +41,10 @@
     "java": ">=17",
     "fabric-api": "*",
     "fabric-language-kotlin": ">=1.9.0"
+  },
+  "custom": {
+    "cardinal-components": [
+      "advagri:season"
+    ]
   }
 }

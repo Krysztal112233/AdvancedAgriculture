@@ -1,5 +1,6 @@
 package dev.krysztal.advagri
 
+import dev.krysztal.advagri.registry.AdvAgriNaturalBlocks
 import dev.krysztal.advagri.registry.AdvAgriNaturalItems
 import io.wispforest.owo.registration.reflect.FieldRegistrationHandler
 import net.fabricmc.api.ModInitializer
@@ -13,7 +14,10 @@ object AdvAgri : ModInitializer {
     override fun onInitialize() {
         AdvAgriItemGroups.init()
         AdvAgriNaturalItems.init()
+        AdvAgriNaturalBlocks.init()
+
         FieldRegistrationHandler.register(AdvAgriNaturalItems::class.java, MOD_ID, false)
+        FieldRegistrationHandler.register(AdvAgriNaturalBlocks::class.java, MOD_ID, false)
     }
 
     fun identifier(path: String): Identifier = Identifier(MOD_ID, path)
