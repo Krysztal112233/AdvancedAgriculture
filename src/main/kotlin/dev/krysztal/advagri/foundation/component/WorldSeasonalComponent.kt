@@ -1,6 +1,5 @@
 package dev.krysztal.advagri.foundation.component
 
-import dev.krysztal.advagri.AdvAgri
 import dev.krysztal.advagri.extender.toIdentifier
 import dev.krysztal.advagri.foundation.season.Season
 import dev.onyxstudios.cca.api.v3.component.ComponentKey
@@ -11,8 +10,6 @@ import net.minecraft.nbt.NbtCompound
 import net.minecraft.world.World
 
 class WorldSeasonalComponent() : SeasonalComponent, WorldComponentInitializer {
-
-    private constructor(world: World) : this()
 
     private var currentSeason = Season.EarlySpring
 
@@ -30,9 +27,9 @@ class WorldSeasonalComponent() : SeasonalComponent, WorldComponentInitializer {
         this.currentSeason = season
     }
 
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     override fun registerWorldComponentFactories(registry: WorldComponentFactoryRegistry) {
-        registry.register(KEY) { WorldSeasonalComponent(it) }
+        registry.register(KEY) { WorldSeasonalComponent() }
     }
 
     companion object {
