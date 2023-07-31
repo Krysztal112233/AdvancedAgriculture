@@ -7,7 +7,7 @@
 <div align="center">
     <img src="https://github.com/KrysztalTechLab/AdvancedAgriculture/workflows/build/badge.svg"> 
     <img src="https://img.shields.io/badge/License-LGPLv3-brightgreen" alt="License"> 
-    <img src="https://img.shields.io/badge/Language-Java-blue" alt="Language"> 
+    <img src="https://img.shields.io/badge/Language-Kotlin-pink" alt="Language"> 
 </div>
 
 ### 特别感谢
