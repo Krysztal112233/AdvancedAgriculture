@@ -21,4 +21,6 @@ class MintBlock : GrassBlock(blockSettings()), Seasonal {
             Season.LateWinter,
             Season.EarlySpring,
         )
+
+    override fun seasonWide(): Int = 4
 }
