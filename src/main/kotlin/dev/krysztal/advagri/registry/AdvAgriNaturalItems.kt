@@ -1,7 +1,7 @@
 package dev.krysztal.advagri.registry
 
 import dev.krysztal.advagri.AdvAgriItemGroups
-import dev.krysztal.advagri.foundation.util.defaultItem
+import dev.krysztal.advagri.foundation.util.item
 import io.wispforest.owo.registration.reflect.ItemRegistryContainer
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents
 import net.minecraft.item.Item
@@ -13,64 +13,84 @@ class AdvAgriNaturalItems() : ItemRegistryContainer {
         fun init() = Unit
 
         @JvmField
-        val STRAWBERRY_SEED = defaultItem()
+        val STRAWBERRY_SEED = item()
 
         @JvmField
-        val RICE_SEED = defaultItem()
+        val RICE_SEED = item()
 
         @JvmField
-        val WATER_CHESTNUT = defaultItem()
+        val WATER_CHESTNUT = item()
 
         @JvmField
-        val SWEET_POTATO_VINE = defaultItem()
+        val SWEET_POTATO_VINE = item()
 
         @JvmField
-        val SWEET_POTATO = defaultItem()
+        val SWEET_POTATO = item()
 
         @JvmField
-        val LETTUCE_SEED = defaultItem()
+        val LETTUCE_SEED = item()
 
         @JvmField
-        val CHILI_SEED = defaultItem()
+        val CHILI_SEED = item()
 
         @JvmField
-        val CORN_SEED = defaultItem()
+        val CORN_SEED = item()
 
         @JvmField
-        val MINT_SEED = defaultItem()
+        val MINT_SEED = item()
 
         @JvmField
-        val CORN = defaultItem()
+        val CORN = item()
 
         @JvmField
-        val STRAWBERRY = defaultItem()
+        val STRAWBERRY = item()
 
         @JvmField
-        val RICE = defaultItem()
+        val RICE = item()
 
         @JvmField
-        val WOOD_ASH = defaultItem()
+        val WOOD_ASH = item()
 
         @JvmField
-        val LETTUCE = defaultItem()
+        val LETTUCE = item()
 
         @JvmField
-        val CHILI = defaultItem()
+        val CHILI = item()
 
         @JvmField
-        val GARLIC = defaultItem()
+        val GARLIC = item()
 
         @JvmField
-        val BAMBOO_LEAVES = defaultItem()
+        val BAMBOO_LEAVES = item()
 
         @JvmField
-        val PHOSPHORUS = defaultItem()
+        val BARK = item()
+
+        // /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        @JvmField
+        val PHOSPHORUS = item()
 
         @JvmField
-        val BARK = defaultItem()
+        val TALC = item()
+
+        // /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        @JvmField
+        val GINKGO_SAPLING = item()
 
         @JvmField
-        val TALC = defaultItem()
+        val APPLE_SAPLING = item()
+
+        @JvmField
+        val PEAR_SAPLING = item()
+
+        @JvmField
+        val PEACH_SAPLING = item()
+
+        @JvmField
+        val APRICOT_SAPLING = item()
+
+        @JvmField
+        val ORANGE_SAPLING = item()
     }
 
     override fun postProcessField(namespace: String?, value: Item?, identifier: String?, field: Field?) {

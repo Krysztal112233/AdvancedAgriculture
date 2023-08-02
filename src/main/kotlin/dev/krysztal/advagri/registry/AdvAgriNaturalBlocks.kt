@@ -1,7 +1,7 @@
 package dev.krysztal.advagri.registry
 
 import dev.krysztal.advagri.AdvAgriItemGroups
-import dev.krysztal.advagri.foundation.util.defaultStoneTypeBlock
+import dev.krysztal.advagri.foundation.util.stoneTypeBlock
 import io.wispforest.owo.registration.reflect.BlockRegistryContainer
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents
 import net.minecraft.block.Block
@@ -13,10 +13,10 @@ class AdvAgriNaturalBlocks : BlockRegistryContainer {
         fun init() = Unit
 
         @JvmField
-        val PYRITE = defaultStoneTypeBlock()
+        val PYRITE = stoneTypeBlock()
 
         @JvmField
-        val CHALCOPYRITE = defaultStoneTypeBlock()
+        val CHALCOPYRITE = stoneTypeBlock()
     }
 
     override fun postProcessField(namespace: String?, value: Block?, identifier: String?, field: Field?) {
